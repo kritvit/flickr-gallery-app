@@ -64,5 +64,5 @@ $ npm run build
 The URL for viewing the project will be displayed in the terminal
 
 ```
-Local: http://localhost:{PORT}/
+Local: http://localhost:3000/
 ```
