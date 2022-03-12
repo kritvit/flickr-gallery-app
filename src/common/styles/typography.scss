@@ -283,6 +283,12 @@ $font-size-xlarge-desktop: 1.33rem; // 24px @ 18px
     border: 0;
     border-left: 2px solid var(--color-sea-green);
 
+    &:focus {
+      &:not(:focus-visible) {
+        color: var(--color-sea-green-contrast);
+      }
+    }
+
     &::before {
       background: var(--color-sea-green);
       background-position: 0 -0.1em;
@@ -302,7 +308,7 @@ $font-size-xlarge-desktop: 1.33rem; // 24px @ 18px
     text-decoration: none;
 
     &:not(:focus-visible) {
-      color: var(--color-sea-green-contrast);
+      color: var(--color-sea-green-emphasized);
       background-color: transparent;
       outline: none;
       box-shadow: none;
