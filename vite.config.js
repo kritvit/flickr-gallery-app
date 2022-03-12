@@ -6,7 +6,7 @@ import legacy from '@vitejs/plugin-legacy';
 import eslintPlugin from 'vite-plugin-eslint';
 import viteStylelint from '@amatlash/vite-plugin-stylelint';
 
-const { PORT = 3001 } = process.env;
+const { UI_PORT = 3000, API_PORT = 3001, } = process.env;
 
 export default defineConfig({
   resolve: {
@@ -31,11 +31,15 @@ export default defineConfig({
     })
   ],
   server: {
+    port: UI_PORT,
     proxy: {
       '/api': {
-        target: `http://localhost:${PORT}`,
+        target: `http://localhost:${API_PORT}`,
         changeOrigin: true,
       },
     },
+  },
+  preview: {
+    port: UI_PORT,
   }
 });
