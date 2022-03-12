@@ -3,6 +3,7 @@ class SearchResponseItem {
   constructor(item) {
 
     this.id = item.id;
+    this.owner = item.owner;
     this.secret = item.secret;
     this.server = item.server;
     this.title = item.title;
