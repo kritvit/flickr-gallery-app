@@ -34,13 +34,13 @@ export default Component('component-cookies', {
     return `
       <section class="component-cookies">
         <div class="component-cookies__inner global__max-container">
-          <div>
-            <h2 class="global__h2">Cookies</h2>
+          <div class="component-cookies__inner-text">
+            <h2 class="global__h2 component-cookies__headline">Cookies</h2>
             <p>Cookies</p>
           </div>
-          <div>
-            <button type="button" class="global__button component-cookies__cta--decline-all">Decline cookies and localStorage</button>
-            <button type="button" class="global__button component-cookies__cta--accept-functional">Accept functional cookies and localStorage</button>
+          <div class="component-cookies__inner-cta">
+            <button type="button" class="global__button component-cookies__button component-cookies__cta--decline-all">Decline cookies and localStorage</button>
+            <button type="button" class="global__button component-cookies__button component-cookies__cta--accept-functional">Accept functional cookies and localStorage</button>
           </div>
         </div>
       </section>
