@@ -479,7 +479,12 @@ export default Component('component-gallery', {
 
           } else {
 
-            this.paginate(gallery);
+            // Timeout to give user time to cancel auto pagination
+            setTimeout(() => {
+
+              this.paginate(gallery);
+
+            }, 1666);
 
           }
 
