@@ -18,7 +18,7 @@ router.get('/search/:query/:page/:take', async (req, res, next) => {
   const params = {
     "text": req.params.query,
     "page": req.params.page,
-    "per_page": req.params.take || 40
+    "per_page": req.params.take
   };
 
   try {
