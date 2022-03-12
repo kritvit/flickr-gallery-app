@@ -1,0 +1,458 @@
+
+@use 'variables';
+@use 'mediaquerys';
+@use 'mixins';
+
+// Variables
+
+$font-size-h1-mobile: 2.8125rem; 	// 45px (16 * 2.8125 = 45)
+$font-size-h1-desktop: 5rem; 		// 90px (18 * 5 = 90)
+
+$font-size-h2-mobile: 2.5rem; 		// 40px @ 16px
+$font-size-h2-desktop: 3rem; 		// 54px @ 18px
+
+$font-size-h3-mobile: 2rem; 		// 32px @ 16px
+$font-size-h3-desktop: 2rem; 		// 36px @ 18px
+
+$font-size-h4-mobile: 1.5rem; 		// 24px @ 16px
+$font-size-h4-desktop: 1.55rem; 	// 28px @ 18px
+
+$font-size-h5-mobile: 1.25rem; 		// 20px @ 16px
+$font-size-h5-desktop: 1.22rem; 	// 22px @ 18px
+
+$font-size-small-mobile: .75rem; 	// 12px @ 16px
+$font-size-small-desktop: .777rem; 	// 14px @ 18px
+
+$font-size-default-mobile: 1rem; 	// 16px @ 16px
+$font-size-default-desktop: 1rem; 	// 18px @ 18px
+
+$font-size-medium-mobile: 1.125rem; // 18px @ 16px
+$font-size-medium-desktop: 1.11rem; // 20px @ 18px
+
+$font-size-large-mobile: 1.25rem; 	// 20px @ 16px
+$font-size-large-desktop: 1.22rem; 	// 22px @ 18px
+
+$font-size-xlarge-desktop: 1.33rem; // 24px @ 18px
+
+// @font-face (Style Linking)
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: normal;
+  src:
+  local('Nunito SemiBold'),
+  url('#{variables.$path-fonts}Nunito-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: normal;
+  src:
+  local('Nunito SemiBoldItalic'),
+  url('#{variables.$path-fonts}Nunito-SemiBoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src:
+  local('Nunito Light'),
+  url('#{variables.$path-fonts}Nunito-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 300;
+  src:
+  local('Nunito LightItalic'),
+  url('#{variables.$path-fonts}Nunito-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: bold;
+  src:
+  local('Nunito Bold'),
+  url('#{variables.$path-fonts}Nunito-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: bold;
+  src:
+  local('Nunito BoldItalic'),
+  url('#{variables.$path-fonts}Nunito-ExtraBoldItalic.ttf') format('truetype');
+}
+
+// Mixins
+@mixin font-h1 {
+  margin-bottom: 1rem;
+  font-size: $font-size-h1-mobile;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -1.5px;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-h1-desktop;
+    letter-spacing: -1px;
+  }
+}
+
+@mixin font-h2 {
+  margin-bottom: 1rem;
+  font-size: $font-size-h2-mobile;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -1px;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-h2-desktop;
+    letter-spacing: -.8px;
+  }
+}
+
+@mixin font-h3 {
+  margin-bottom: 1rem;
+  font-size: $font-size-h3-mobile;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -.5px;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-h3-desktop;
+  }
+}
+
+@mixin font-h4 {
+  margin-bottom: 1rem;
+  font-size: $font-size-h4-mobile;
+  font-weight: bold;
+  line-height: 1.17;
+  letter-spacing: -.3px;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-h4-desktop;
+    line-height: 1.29;
+  }
+}
+
+@mixin font-h5 {
+  margin-bottom: 1rem;
+  font-size: $font-size-h5-mobile;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -.3px;
+
+  @include mixins.break-word;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-h5-desktop;
+    line-height: 1.27;
+    letter-spacing: normal;
+  }
+}
+
+@mixin font-preamble {
+  margin-bottom: 2rem;
+  font-size: $font-size-medium-mobile;
+  color: var(--color-indigo);
+  font-weight: normal;
+  line-height: 1.25;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-medium-desktop;
+    line-height: 1.4;
+  }
+}
+
+@mixin font-default {
+  font-size: $font-size-default-mobile;
+  color: var(--color-black);
+  font-weight: 300;
+  line-height: 1.25;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-default-desktop;
+    line-height: 1.33;
+  }
+}
+
+@mixin font-quote {
+  font-size: $font-size-large-mobile;
+  color: var(--color-indigo);
+  font-weight: normal;
+  line-height: 1.4;
+  letter-spacing: .5px;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-indigo);
+    margin-bottom: -0.7rem;
+  }
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-large-desktop;
+    line-height: 1.36;
+  }
+}
+
+@mixin font-list {
+  font-size: $font-size-default-desktop;
+  color: var(--color-black);
+  font-weight: normal;
+  line-height: 1.5;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-default-desktop;
+    line-height: 1.33;
+  }
+}
+
+@mixin font-link {
+  font-size: $font-size-default-mobile;
+  color: var(--color-black);
+  font-weight: 300;
+  line-height: 1.25;
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: var(--color-white);
+    background-color: var(--color-indigo);
+    outline: 2px var(--color-neon) solid;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 10px var(--color-indigo);
+    text-decoration: none;
+    &:not(:focus-visible) {
+      color: var(--color-black);
+      background-color: transparent;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-default-desktop;
+    line-height: 1.33;
+  }
+}
+
+@mixin font-link-line-left {
+
+  @include font-link;
+
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: .4rem 1rem;
+  color: var(--color-black);
+  text-decoration: none;
+  border: 0;
+  border-left: 2px solid var(--color-sea-green-emphasized);
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-101%);
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    outline: none;
+    color: var(--color-sea-green-contrast);
+    border: 0;
+    border-left: 2px solid var(--color-sea-green);
+
+    &::before {
+      background: var(--color-sea-green);
+      background-position: 0 -0.1em;
+      background-image: linear-gradient(to right, var(--color-sea-green-emphasized) 0, var(--color-sea-green) 100%);
+      transition: transform variables.$transition-speed ease-in-out;
+      transform: translateX(0%);
+    }
+  }
+
+  &:focus {
+    color: var(--color-sea-green-contrast);
+    background-color: var(--color-sea-green-emphasized);
+    border-color: var(--color-sea-green-emphasized);
+    outline: 2px var(--color-neon) solid;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 10px var(--color-sea-green-emphasized);
+    text-decoration: none;
+
+    &:not(:focus-visible) {
+      color: var(--color-sea-green-contrast);
+      background-color: transparent;
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:active {
+      &::before {
+        background-color: var(--color-sea-green-emphasized);
+      }
+    }
+  }
+}
+
+@mixin font-caption {
+  font-size: $font-size-small-mobile;
+  color: var(--color-indigo);
+  font-weight: normal;
+  line-height: 1.29;
+  letter-spacing: .5px;
+
+  @include mediaquerys.breakpoint-desktop {
+    font-size: $font-size-small-desktop;
+    line-height: normal;
+    letter-spacing: 1px;
+  }
+}
+
+@mixin button {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 6px 24px;
+  border: 2px solid;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+
+  transition: color .2s, background-color .2s, border-color .2s, box-shadow .2s, transform .2s ease-in-out;
+
+  color: var(--color-white-emphasized);
+  background-color: var(--color-indigo);
+  border-color: var(--color-indigo);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--color-white);
+    background-color: var(--color-indigo-emphasized);
+    transform: scale(1.05);
+    box-shadow: 0 10px 10px -5px var(--color-shadow);
+  }
+
+  &:focus {
+    outline: none;
+    color: var(--color-white);
+    background-color: var(--color-indigo-emphasized);
+    box-shadow: 0 0 0 5px var(--color-indigo);
+    border-color: var(--color-neon);
+    &:not(:focus-visible) {
+      color: var(--color-white-emphasized);
+      background-color: var(--color-indigo);
+      box-shadow: none;
+      border-color: var(--color-indigo);
+    }
+
+    &:active {
+      color: var(--color-white);
+      background-color: var(--color-black);
+    }
+  }
+
+}
+
+// Styles
+html {
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 100%; // 1rem === 16px
+  color: var(--color-black);
+  font-weight: 300;
+  line-height: 1.25;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include mediaquerys.breakpoint-desktop {
+
+    font-size: 112.5%; // 1rem === 18px
+    line-height: 1.33;
+
+  }
+
+}
+
+.global {
+  &__h1 {
+    @include font-h1;
+  }
+
+  &__h2 {
+    @include font-h2;
+  }
+
+  &__h3 {
+    @include font-h3;
+  }
+
+  &__h4 {
+    @include font-h4;
+  }
+
+  &__h5 {
+    @include font-h5;
+  }
+
+  &__font-break-word {
+    @include mixins.break-word;
+  }
+
+  &__font-bold {
+    font-weight: 700;
+  }
+
+  &__font-preamble {
+    @include font-preamble;
+  }
+
+  &__font-quote {
+    @include font-quote;
+  }
+
+  &__font-list {
+    @include font-list;
+  }
+
+  &__font-link {
+    @include font-link;
+  }
+
+  &__font-link-line-left {
+    @include font-link-line-left;
+  }
+
+  &__button {
+    @include button;
+  }
+
+  &__font-caption {
+    @include font-caption;
+  }
+}

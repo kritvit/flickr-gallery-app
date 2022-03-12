@@ -1,0 +1,41 @@
+@use '@styles/mediaquerys';
+
+$root: component-footer;
+
+.#{$root} {
+  color: var(--color-sea-green);
+  background-color: var(--color-sea-green-contrast);
+  margin-top: 2.5rem;
+  padding: 2.5rem 0;
+
+  ::selection {
+    color: var(--color-sea-green-contrast);
+    background: var(--color-sea-green);
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+
+    @include mediaquerys.breakpoint-desktop {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    @include mediaquerys.breakpoint-desktop {
+      max-width: 33%;
+    }
+  }
+}

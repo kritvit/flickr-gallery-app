@@ -1,0 +1,74 @@
+
+@use 'variables';
+@use 'mediaquerys';
+
+:root {
+  display: variables.$path-images;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: var(--color-indigo);
+  background: var(--color-white);
+  -webkit-print-color-adjust: exact;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-indigo);
+}
+
+div,
+section {
+  box-sizing: border-box;
+}
+
+.global__max-container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+@include mediaquerys.breakpoint-s {
+
+  .global__max-container {
+    padding-left: variables.$global-padding-size;
+    padding-right: variables.$global-padding-size;
+  }
+
+}
+
+@include mediaquerys.breakpoint-m {
+
+  .global__max-container {
+    padding-left: variables.$global-padding-size-desktop;
+    padding-right: variables.$global-padding-size-desktop;
+  }
+
+}
+
+@include mediaquerys.breakpoint-xl {
+
+  .global__max-container {
+    max-width: mediaquerys.$breakpoint-xl;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+}
+@include mediaquerys.breakpoint-xxl {
+
+  .global__max-container {
+    max-width: mediaquerys.$breakpoint-xl;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}

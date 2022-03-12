@@ -1,0 +1,46 @@
+
+$breakpoint-s: 640px;
+$breakpoint-m: 768px;
+$breakpoint-l: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-xxl: 1440px;
+
+@mixin breakpoint-s {
+  @media only screen and (min-width: $breakpoint-s)
+  {@content;}
+}
+
+@mixin breakpoint-m {
+  @media only screen and (min-width: $breakpoint-m)
+  {@content;}
+}
+
+@mixin breakpoint-l {
+  @media only screen and (min-width: $breakpoint-l)
+  {@content;}
+}
+
+@mixin breakpoint-xl {
+  @media only screen and (min-width: $breakpoint-xl)
+  {@content;}
+}
+
+@mixin breakpoint-xxl {
+  @media only screen and (min-width: $breakpoint-xxl)
+  {@content;}
+}
+
+@mixin ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  {@content;}
+}
+
+@mixin breakpoint-mobile {
+  @media only screen and (max-width: $breakpoint-m - 1px)
+  {@content;}
+}
+
+@mixin breakpoint-desktop {
+  @media only screen and (min-width: $breakpoint-m)
+  {@content;}
+}
