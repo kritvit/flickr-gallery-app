@@ -4,7 +4,7 @@ This repository contains an image gallery demo using the [Flickr Photo Search AP
 
 ## Info
 
-This project is built using [Vite](https://vitejs.dev/), [Express](https://expressjs.com/), [JavaScript](https://tc39.es/) compiled by [Babel](https://babeljs.io/) via [Vite Legacy](https://www.npmjs.com/package/@vitejs/plugin-legacy) and [SASS](https://sass-lang.com/). The code is validated using [ESLint](https://eslint.org/) for [JavaScript](https://tc39.es/) and [Stylelint](https://stylelint.io/) for [SASS](https://sass-lang.com/).
+This project is built using [Vite](https://vitejs.dev/), [Express](https://expressjs.com/), [JavaScript](https://tc39.es/) compiled with [Babel](https://babeljs.io/) via [Vite Legacy](https://www.npmjs.com/package/@vitejs/plugin-legacy) and [SASS](https://sass-lang.com/). The code is validated using [ESLint](https://eslint.org/) for [JavaScript](https://tc39.es/) and [Stylelint](https://stylelint.io/) for [SASS](https://sass-lang.com/).
 
 Accessibility is validated using [WebAIM Wave](https://wave.webaim.org/). Contrast when setting up color palette using [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
