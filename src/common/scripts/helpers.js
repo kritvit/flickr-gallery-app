@@ -58,8 +58,8 @@ export const helper = {
     return typeof value === 'string';
   },
   isNotEmptyString (value) {
-    value = 'string' === typeof value ? value.trim() : false;
-    return value !== false && '' !== value;
+    value = 'string' === typeof value ? value.trim() : '';
+    return '' !== value;
   },
   isNotEmptyObjectLiteral (obj) {
     return obj && Object.entries(obj).length > 0 && obj.constructor === Object;
