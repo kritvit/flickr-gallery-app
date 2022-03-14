@@ -69,5 +69,10 @@ export const helper = {
   },
   isUndefined(value) {
     return typeof value === 'undefined';
+  },
+  isTouch() {
+    return (('ontouchstart' in window) ||
+      (navigator.maxTouchPoints > 0) ||
+      (navigator.msMaxTouchPoints > 0));
   }
 };
