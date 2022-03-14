@@ -31,6 +31,8 @@ export default Component('component-gallery', {
 
     if (galleries) {
 
+      const isTouch = helper.isTouch();
+
       galleries.forEach((domNode, index) => {
 
         // If gallery DOM node already have id
@@ -47,6 +49,12 @@ export default Component('component-gallery', {
         const query = domNode.getAttribute('data-query');
 
         if (helper.isNotEmptyString(query)) {
+
+          if (isTouch) {
+
+            domNode.classList.add(`${this.name}--is-touch`);
+
+          }
 
           // Create state for current gallery
           this.state.gallery[id] = { id, domNode, query, savedItems: [] };
@@ -281,6 +289,25 @@ export default Component('component-gallery', {
 
       }
 
+      // Add click to toggle options button
+      const toggle = listItem.querySelector('.component-gallery__item-options-toggle');
+
+      if (toggle) {
+
+        toggle.addEventListener('click', event => {
+
+          const item = event.currentTarget.closest('.component-gallery__item');
+
+          if (item) {
+
+            item.classList.toggle('component-gallery__item--show-overlay');
+
+          }
+
+        }, false);
+
+      }
+
     });
 
     // Update items / total in gallery header
@@ -364,6 +391,25 @@ export default Component('component-gallery', {
         save.addEventListener('click', event => {
 
           this.saveItem(event.currentTarget, item, gallery);
+
+        }, false);
+
+      }
+
+      // Add click to toggle options button
+      const toggle = listItem.querySelector('.component-gallery__item-options-toggle');
+
+      if (toggle) {
+
+        toggle.addEventListener('click', event => {
+
+          const item = event.currentTarget.closest('.component-gallery__item');
+
+          if (item) {
+
+            item.classList.toggle('component-gallery__item--show-overlay');
+
+          }
 
         }, false);
 
