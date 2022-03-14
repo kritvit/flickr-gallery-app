@@ -17,19 +17,25 @@ export function listItemTmpl (item) {
         </figcaption>
       </figure>
       <div class="component-gallery__item-options">
-        <a href="${item.url.profile}" target="_blank" rel="noopener" title="View Profile" class="component-gallery__item-options-icon">
-          <svg><use xlink:href="${icons}#icon-person"></use></svg>
-          <span>View Profile</span>
-        </a>
-        <a href="${item.url.photo}" target="_blank" rel="noopener" title="View Photo at Flickr" class="component-gallery__item-options-icon">
-          <svg><use xlink:href="${icons}#icon-photo"></use></svg>
-          <span>View Photo at Flickr</span>
-        </a>
-        <button type="button" title="Save Photo" class="component-gallery__item-options-save ${item.isSaved ? 'component-gallery__item-options-save--saved' : ''} component-gallery__item-options-icon">
-          <svg><use xlink:href="${icons}#icon-star"></use></svg>
-          <svg><use xlink:href="${icons}#icon-star-filled"></use></svg>
-          <span>Save Photo</span>
+        <button type="button" title="Show image options" class="component-gallery__item-options-toggle component-gallery__item-options-icon">
+          <svg><use xlink:href="${icons}#icon-options"></use></svg>
+          <span>Show image options</span>
         </button>
+        <div class="component-gallery__item-options-inner">
+          <a href="${item.url.profile}" target="_blank" rel="noopener" title="View Profile" class="component-gallery__item-options-icon">
+            <svg><use xlink:href="${icons}#icon-person"></use></svg>
+            <span>View Profile</span>
+          </a>
+          <a href="${item.url.photo}" target="_blank" rel="noopener" title="View Photo at Flickr" class="component-gallery__item-options-icon">
+            <svg><use xlink:href="${icons}#icon-photo"></use></svg>
+            <span>View Photo at Flickr</span>
+          </a>
+          <button type="button" title="Save Photo" class="component-gallery__item-options-save ${item.isSaved ? 'component-gallery__item-options-save--saved' : ''} component-gallery__item-options-icon">
+            <svg><use xlink:href="${icons}#icon-star"></use></svg>
+            <svg><use xlink:href="${icons}#icon-star-filled"></use></svg>
+            <span>Save Photo</span>
+          </button>
+        </div>
       </div>
     </li>
   `);
