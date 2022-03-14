@@ -10,8 +10,8 @@ export function listItemTmpl (item) {
           <svg><use xlink:href="${icons}#icon-plus"></use></svg>
           <span>Enlarge Photo</span>
         </button>
-        <figcaption class="component-gallery__figcaption global__font-caption">
-          <div class="component-gallery__figcaption-inner">
+        <figcaption class="component-gallery__figure-figcaption global__font-caption">
+          <div class="component-gallery__figure-figcaption-inner">
             ${item.title}
           </div>
         </figcaption>
