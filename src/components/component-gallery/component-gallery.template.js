@@ -11,7 +11,9 @@ export function listItemTmpl (item) {
           <span>Enlarge Photo</span>
         </button>
         <figcaption class="component-gallery__figcaption global__font-caption">
-          ${item.title}
+          <div class="component-gallery__figcaption-inner">
+            ${item.title}
+          </div>
         </figcaption>
       </figure>
       <div class="component-gallery__item-options">
@@ -82,12 +84,12 @@ export function loaderTmpl(text, className) {
   `);
 }
 
-export function galleryErrorTmpl() {
+export function galleryErrorTmpl(title, text) {
   return createElementFromHTML(`
     <div class="component-gallery__error global__grid-container">
       <div class="global__grid-item global__grid-item--small-12">
-        <h2 class="global__h2">Something went wrong!</h2>
-        <p>Please refresh the page and try again.</p>
+        <h2 class="global__h2">${title}</h2>
+        <p>${text}</p>
       </div>
     </div>
   `);
