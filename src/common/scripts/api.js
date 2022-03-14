@@ -74,12 +74,15 @@ export async function searchPhotos(query, page = 1, take= 20) {
       // Fetch data from API
       const url = encodeURI(`/api/search/${cleanQuery}/${page}/${take}`);
       const response = await fetch(url);
-      const parsedResponse = await response.json();
 
-      if (parsedResponse) {
+      if (200 === response.status) {
+
+        // Parse response into json format
+        const parsedResponse = await response.json();
 
         // Model data for returning to component
         const returnData = new Photos(parsedResponse);
+
         // Model data for saving in localStorage
         const saveData = cachePhotos(cache, parsedResponse);
 
@@ -89,11 +92,18 @@ export async function searchPhotos(query, page = 1, take= 20) {
         // Return to component
         return returnData;
 
+      } else if (503 === response.status) {
+
+        // Return timeout so app can display a 
+        return {
+          status: 'timeout'
+        };
+
       }
 
     } catch (message) {
 
-      // Throw error
+      // Throw error for all other errors that are not handled in "try"
       console.error(message);
 
     }
