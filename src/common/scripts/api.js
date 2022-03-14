@@ -94,7 +94,7 @@ export async function searchPhotos(query, page = 1, take= 20) {
 
       } else if (503 === response.status) {
 
-        // Return timeout so app can display a 
+        // Return timeout so app can display a
         return {
           status: 'timeout'
         };
