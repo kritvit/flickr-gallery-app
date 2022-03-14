@@ -104,8 +104,6 @@
 }
 
 @mixin break-word {
-  // word-break: normal; // sass-lint:disable-line no-duplicate-properties
-  // word-break: break-word; // sass-lint:disable-line no-duplicate-properties
   overflow-wrap: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
