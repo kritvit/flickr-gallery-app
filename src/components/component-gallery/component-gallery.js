@@ -141,6 +141,7 @@ export default Component('component-gallery', {
 
       // Get data from cache
       gallery.data = cache.data;
+      gallery.savedItems = cache.savedItems;
       gallery.query = cache.query;
       gallery.from = 'cache';
 
@@ -148,6 +149,7 @@ export default Component('component-gallery', {
 
       // Get data from API
       gallery.data = await searchPhotos(gallery.query);
+
       gallery.from = 'api';
 
     }
@@ -193,6 +195,16 @@ export default Component('component-gallery', {
 
     const loader = gallery.domNode.querySelector('.component-gallery__loader');
 
+    let title = 'Something went wrong!';
+    let text = 'Please refresh the page and try again.';
+
+    if (gallery && gallery.data && gallery.data.status === 'timeout') {
+
+      title = 'This took a bit longer than expected!';
+      text = 'The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.';
+
+    }
+
     if (loader) {
 
       loader.remove();
@@ -201,7 +213,7 @@ export default Component('component-gallery', {
 
     if (!gallery.domNode.querySelector('.component-gallery__error')) {
 
-      gallery.domNode.appendChild(galleryErrorTmpl());
+      gallery.domNode.appendChild(galleryErrorTmpl(title, text));
 
     }
 
